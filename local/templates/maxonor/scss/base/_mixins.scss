@@ -1,0 +1,367 @@
+@mixin logo {
+	width: 137px;
+	height: 52px;
+	background: url(../assets/images/dark_header/logo.svg)
+		no-repeat center center;
+	background-size: contain;
+}
+
+@mixin link {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	@include link_effects;
+}
+
+@mixin link_effects {
+	&:hover {
+		color: $c-dark-orange;
+	}
+
+	&:active {
+		color: $c-orange-active;
+	}
+
+	&:disabled,
+	&[disabled],
+	&[disabled='disabled'] {
+		color: $c-disabled;
+	}
+}
+
+@mixin phone_link {
+	padding-left: 25px;
+	position: relative;
+	color: #fff;
+	white-space: nowrap;
+	&:before {
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 20px;
+		height: 20px;
+		background: url(/local/templates/maxonor/assets/images/dark_header/phone.svg)
+			no-repeat center center;
+	}
+}
+
+@mixin main_container {
+	max-width: calc(1274px + 92px);
+	padding: 0 46px;
+	margin: 0 auto;
+	@include breakpoint(mobile-middle) {
+		max-width: 100%;
+		padding: 0 15px;
+	}
+}
+
+@mixin section {
+	// &:not(:last-of-type) {
+	margin-bottom: $section-mb;
+	@include breakpoint(tablet-md) {
+		margin-bottom: $section-mb-tablet;
+	}
+	@include breakpoint(mobile-large) {
+		margin-bottom: $section-mb-mobile;
+	}
+	// }
+}
+
+@mixin double_card {
+	width: 50%;
+	height: 419px;
+	background-size: cover !important;
+	position: relative;
+
+	@include breakpoint(mobile-large) {
+		width: 100%;
+	}
+
+	.wrap {
+		width: 100%;
+		height: 419px;
+		overflow: hidden;
+		margin-bottom: 15px;
+		border-radius: 12px;
+		position: relative;
+
+		@include breakpoint(mobile-large) {
+			background: rgba(0, 0, 0, 0.4);
+		}
+
+		img {
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+
+	> * {
+		position: relative;
+		z-index: 5;
+	}
+
+	.wrap:before {
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.3) 0%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		z-index: 1;
+	}
+
+	&:hover {
+		.wrap:before {
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.7),
+				rgba(0, 0, 0, 0.7)
+			);
+		}
+
+		.item--title {
+			&:after {
+				margin-left: 20px;
+			}
+		}
+	}
+
+	&:active {
+		&:before {
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0.5)
+			);
+		}
+	}
+
+	&:disabled,
+	&[disabled],
+	&[disabled='disabled'] {
+		&:before {
+			background: none;
+		}
+	}
+}
+
+@mixin input {
+	display: block;
+	width: 100%;
+	max-width: 320px;
+	height: 55px;
+	padding: 16px 16px 15px;
+	@include text;
+	line-height: 24px;
+	letter-spacing: -0.24px;
+	background: rgba(201, 204, 209, 0.24);
+	border-radius: 8px;
+	overflow: hidden;
+
+	&::placeholder {
+		color: #9d9fa3;
+	}
+
+	@include breakpoint(mobile-small) {
+		height: 40px;
+		font-size: 16px;
+		line-height: 20px;
+	}
+}
+
+@mixin search_field {
+	width: 100%;
+	max-width: 620px;
+	height: 55px;
+	position: relative;
+
+	> input {
+		@include input;
+		max-width: 620px;
+		padding: 16px 54px 15px 16px;
+	}
+
+	> button[type='submit'] {
+		position: absolute;
+		right: 17px;
+		top: 18px;
+		width: 20px;
+		height: 20px;
+		background: url(/local/templates/maxonor/assets/images/light_header/lupa.svg)
+			no-repeat center center;
+		cursor: pointer;
+		z-index: 10;
+		@include text;
+		line-height: 24px;
+		letter-spacing: -0.24px;
+		&::placeholder {
+			color: #9d9fa3;
+		}
+	}
+}
+
+@mixin pin_card {
+	&__map {
+		width: 100%;
+		height: auto;
+		position: relative;
+
+		> img {
+			max-width: 100%;
+			max-height: 100%;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+		}
+
+		&__item {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: flex;
+
+			> span,
+			> .pin {
+				display: block;
+				width: 30px;
+				min-width: 30px;
+				height: 30px;
+				background: rgba(0, 0, 0, 0.5);
+				cursor: pointer;
+				border-radius: 50%;
+				position: relative;
+				&:before {
+					position: absolute;
+					content: '';
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					background-color: #fff;
+					border-radius: 50%;
+					width: 15px;
+					height: 15px;
+					transition: all 0.2s ease-in-out;
+				}
+
+				&:hover {
+					&:before {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+
+			&--desc {
+				opacity: 0;
+				visibility: hidden;
+				max-width: 276px;
+				transition: all 0.2s ease-in-out;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 17px;
+				color: #fff;
+				padding: 13px 10px 22px;
+				margin-top: -7px;
+				margin-left: 6px;
+				border-radius: 12px;
+				transition: all 0.1s ease-in-out;
+
+				p {
+					font-weight: 500;
+					font-size: 14px;
+					&:not(:last-of-type) {
+						margin-bottom: 3px;
+					}
+				}
+			}
+
+			> span:hover + div,
+			.pin:hover + div {
+				background: rgba(0, 0, 0, 0.5);
+				overflow: hidden;
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		> .hero__slider__item__link-more {
+			position: absolute;
+			left: 50%;
+			bottom: 37px;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+@mixin tabs_parent {
+	width: 100%;
+	max-width: 100%;
+	overflow: auto;
+	padding-bottom: 20px;
+}
+
+@mixin tabs {
+	display: flex;
+	align-items: center;
+	border: 2px solid #e2e7eb;
+	border-radius: 34px;
+	height: 55px;
+	width: fit-content;
+
+	li {
+		height: 100%;
+		width: auto;
+		text-align: center;
+		padding: 16px;
+		min-width: 170px;
+		border-radius: 34px;
+		overflow: hidden;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include small_text;
+		color: $c-dark;
+		user-select: none;
+
+		&.active {
+			background-color: #fff;
+		}
+	}
+}
+
+@mixin btn {
+	color: #67636d;
+	@include small_text;
+	font-size: 16px;
+	padding: 11px 15px 10px;
+	background-color: #fff;
+	border-radius: 34px;
+	overflow: hidden;
+	border: none !important;
+	outline: none !important;
+	text-decoration: none !important;
+}
+
+@mixin btn_active {
+	background-color: $c-orange !important;
+	color: #fff !important;
+}
+
+@mixin link_lined {
+	text-decoration: underline !important;
+	&:hover {
+		text-decoration: none !important;
+	}
+}

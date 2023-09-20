@@ -1,0 +1,112 @@
+.shop_sections {
+	&__desc {
+		margin-bottom: 54px;
+
+		p {
+			@include text;
+			color: #67636d;
+			&:not(:last-of-type) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.tabs_parent {
+		margin-bottom: 20px;
+
+		.tabs {
+			background-color: #f5f6f8;
+		}
+	}
+
+	&__slider {
+		display: none;
+
+		&.show {
+			display: block;
+		}
+
+		a.slick-slide {
+			margin: 0 17px;
+
+			img {
+				border-radius: 12px;
+				overflow: hidden;
+				margin: 0 0 15px;
+				object-fit: contain;
+				object-position: center center;
+				height: 273px;
+
+				@include breakpoint(mobile-large) {
+					width: 100%;
+					max-width: 100%;
+					object-fit: cover;
+					height: 370px;
+				}
+
+				@include breakpoint(mobile-small) {
+					height: 273px;
+				}
+			}
+
+			p {
+				@include section_card_title;
+				color: #67636d;
+				@include link_effects;
+				width: fit-content;
+				position: relative;
+				padding-right: 10px;
+
+				span {
+					position: relative;
+					&:after {
+						position: absolute;
+						content: '';
+						width: 17px;
+						height: 12px;
+						background: url(/local/templates/maxonor/assets/images/sections_gray_arrow.svg)
+							no-repeat center center;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						display: block;
+					}
+				}
+			}
+		}
+
+		.slick-list {
+			margin: 0 -17px;
+		}
+
+		.slick-prev,
+		.slick-next {
+			top: calc(50% - 20px);
+			width: 37px;
+			height: 38px;
+			border-radius: 50%;
+			z-index: 500;
+			background: #fff
+				url(/local/templates/maxonor/assets/images/slick_prev_silver.svg)
+				no-repeat center center;
+			background-size: 12px 14px;
+
+			&:before {
+				content: '';
+			}
+		}
+
+		.slick-prev {
+			left: 17px;
+		}
+
+		.slick-next {
+			right: 17px;
+			transform: translateY(-50%) rotate(180deg);
+		}
+
+		.slick-track {
+			margin-left: 0;
+		}
+	}
+}

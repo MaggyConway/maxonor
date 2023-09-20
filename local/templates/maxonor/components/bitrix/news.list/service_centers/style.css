@@ -1,0 +1,157 @@
+div.news-list {
+	word-wrap: break-word;
+}
+
+div.news-list img.preview_picture {
+	float: left;
+	margin: 0 4px 6px 0;
+}
+
+.news-date-time {
+	color: #486DAA;
+}
+
+.page_service_centers {
+	color: #1C1B1F;
+}
+
+.page_service_centers h2 {
+	margin-top: 40px;
+	margin-bottom: 38px;
+	line-height: 47px;
+	font-weight: 600;
+	font-size: 40px;
+}
+
+.page_service_centers .action {
+	margin-bottom: 50px;
+	max-width: 462px;
+	line-height: 28px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.page_service_centers .action b {
+	font-weight: bold;
+	color: black;
+}
+
+.page_service_centers .service_centers {
+	padding-bottom: 35px;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2vw;
+}
+
+.page_service_centers .service_centers .wrap {
+	display: flex;
+	flex-direction: column;
+	padding: 27px 47px;
+	box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	background-color: #F5F6F8;
+}
+
+.page_service_centers .service_centers .wrap .town {
+	line-height: 155%;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.page_service_centers .service_centers .wrap .name {
+	line-height: 225%;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.page_service_centers .service_centers .wrap .address {
+	line-height: 155%;
+	font-weight: 400;
+	font-size: 16px;
+	color: #67636D;
+}
+
+.page_service_centers .service_centers .wrap .phone {
+	line-height: 155%;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.page_service_centers .service_centers .wrap .mail {
+	line-height: 155%;
+	font-weight: 400;
+	font-size: 16px;
+	color: #67636D;
+}
+
+.page_service_centers .service_centers .wrap .site {
+	line-height: 155%;
+	font-weight: 400;
+	font-size: 16px;
+	color: #67636D;
+}
+
+.page_service_centers .service_centers .wrap .phone span,
+.page_service_centers .service_centers .wrap .phone a,
+.page_service_centers .service_centers .wrap .mail span,
+.page_service_centers .service_centers .wrap .mail a,
+.page_service_centers .service_centers .wrap .site a {
+	color: #67636D;
+}
+
+.page_service_centers .service_centers .wrap .map {
+	display: flex;
+	align-items: center;
+	margin: auto auto 0 0;
+	padding-top: 15px;
+	line-height: 140%;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.page_service_centers .service_centers .wrap .map span {
+	display: flex;
+	padding-right: 5px;
+}
+
+.page_service_centers .no-city {
+	line-height: 225%;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.page_service_centers .contact-us {
+	max-width: 295px;
+	line-height: 140%;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.page_service_centers .our-phone {
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.page_service_centers .our-phone span {
+	display: flex;
+	padding-right: 5px;
+}
+
+.page_service_centers .our-phone a {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.page_service_centers .page_service_centers__links--request {
+	display: flex;
+	width: fit-content;
+	padding: 10px 20px;
+	line-height: 17px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #FFFFFF;
+}

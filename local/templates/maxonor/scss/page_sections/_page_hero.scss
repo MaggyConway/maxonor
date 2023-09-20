@@ -1,0 +1,66 @@
+.page_hero {
+	width: 100%;
+	height: 100vh;
+	background-size: cover !important;
+	margin-bottom: 71px; // 160-89
+	position: relative;
+	z-index: 300;
+	top: -89px;
+
+	@include breakpoint(IPad-Pro) {
+		margin-bottom: 11px;
+	}
+
+	@include breakpoint(mobile-large) {
+		height: 700px;
+	}
+
+	@include breakpoint(mobile-middle) {
+		height: 622px;
+	}
+
+	&--inner {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 0 calc((100% - 1274px) / 2);
+
+		@include breakpoint(desktop) {
+			padding: 0 46px;
+		}
+
+		@include breakpoint(mobile-middle) {
+			padding: 0 15px;
+		}
+
+		&.dark-35 {
+			background: rgba(0, 0, 0, 0.35);
+		}
+
+		&.dark-50 {
+			background: rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	&__title {
+		@include h1;
+		color: white;
+		margin-bottom: 25px;
+	}
+
+	&.our {
+		.page_hero--inner {
+			@include breakpoint(mobile-large) {
+				background: none;
+				padding-top: 50px;
+			}
+		}
+	}
+}

@@ -1,0 +1,178 @@
+.footer {
+	background-color: $c-dark;
+	
+	&--inner-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 34px 46px 0;
+		margin: -12px;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+
+		@include breakpoint(mobile-middle) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			text-align: center;
+			padding: 30px 15px 0;
+			margin: 0;
+		}
+	}
+
+	.logo {
+		@include logo;
+		margin-bottom: 6px;
+
+		@include breakpoint(tablet-m) {
+			margin-bottom: 16px;
+		}
+
+		@include breakpoint(mobile-middle) {
+			margin-bottom: 0;
+		}
+	}
+
+	&--col {
+		width: fit-content;
+		max-width: 235px;
+		margin: 12px;
+
+		@include breakpoint(tablet-md) {
+			width: 28%;
+		}
+
+		@include breakpoint(tablet) {
+			display: none;
+			width: 50%;
+		}
+
+		@include breakpoint(mobile-middle) {
+			width: 100%;
+			margin: 0;
+		}
+
+		&:first-child, &:nth-last-child(2) {
+			display: block;
+		}
+
+		&:nth-last-child(2) {
+			@include breakpoint(laptop) {
+				width: 100%;
+				max-width: 100%;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+			}
+			@include breakpoint(mobile-middle) {
+				display: block;
+			}
+		}
+
+		ul {
+			li {
+				a {
+					@include link;
+					color: #fff;
+					font-weight: 400;
+					line-height: 16.5px;
+				}
+
+				&:not(:last-of-type) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		&:first-child {
+			max-width: 410px;
+			width: 410px;
+			ul {
+				column-count: 2;
+				@include breakpoint(IPad-Pro) {
+					column-count: 3;
+				}
+				@include breakpoint(tablet-m) {
+					column-count: 2;
+				}
+				@include breakpoint(tablet) {
+					display: none;
+				}
+			}
+
+			@include breakpoint(laptop) {
+				max-width: 350px;
+			}
+
+			@include breakpoint(IPad-Pro) {
+				max-width: 100%;
+				width: 100%;
+			}
+
+			@include breakpoint(tablet) {
+				width: 50%;
+				max-width: unset;
+			}
+		}
+
+		&.tech_menu {
+			@include breakpoint(IPad-Pro) {
+				column-count: 2;
+				width: calc(70% - 24px);
+				max-width: calc(70% - 24px);
+				margin-top: 24px;
+			}
+
+			@include breakpoint(tablet-md) {
+				column-count: 1;
+			}
+			
+			& + .footer--col {
+				@include breakpoint(IPad-Pro) {
+					width: calc(30% - 24px);
+					max-width: calc(30% - 24px);
+				}
+			}
+		}
+	}
+
+	&--line {
+		margin: 36px -46px 0;
+		width: calc(100% + 92px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include small_text;
+		@include link_effects;
+		line-height: 16px;
+		color: #fff;
+		text-align: center;
+		background: #58585A;
+		padding: 9px 0;
+
+		&:hover {
+			color: #fff;
+		}
+
+		@include breakpoint(mobile-middle) {
+			margin: 37px -15px 0;
+			width: calc(100% + 30px);
+		}
+
+		a {
+			@include link;
+			font-weight: 400;
+		}
+	}
+
+	&__phone {
+		@include link;
+		@include phone_link;
+		@include breakpoint(mobile-middle) {
+			margin-top: 32px;
+			display: inline-block;
+		}
+	}
+}

@@ -1,0 +1,60 @@
+.page_videos {
+	@include section;
+
+	h2 {
+		margin-bottom: 38px;
+	}
+
+	&--inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		@include breakpoint(tablet-md) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+	}
+
+	&__item {
+		@include double_card;
+		height: 372px;
+		padding: 0 !important;
+
+		@include breakpoint(tablet-md) {
+			width: 100%;
+			height: auto;
+		}
+
+		&.sleep {
+			position: relative;
+			&:before {
+				position: absolute;
+				content: '';
+				cursor: pointer;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				background: url(/local/templates/maxonor/assets/images/play.svg)
+					no-repeat center center;
+				width: 40px;
+				height: 40px;
+				z-index: 100;
+			}
+		}
+
+		&:first-child {
+			margin-right: 34px;
+			@include breakpoint(tablet-md) {
+				margin-right: 0;
+				margin-bottom: 32px;
+			}
+		}
+
+		video {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

@@ -1,0 +1,250 @@
+.page_pure_life {
+	.page_hero {
+		&__title {
+			display: flex;
+			align-items: center;
+			margin-bottom: 42px;
+
+			img {
+				margin-left: 18px;
+			}
+		}
+
+		p {
+			max-width: 50%;
+			color: #fff;
+			margin-bottom: 38px;
+		}
+
+		a {
+			color: #fff;
+			@include link_effects;
+		}
+	}
+
+	.production {
+		position: relative;
+		background-color: #f5f6f8;
+		padding-top: 44px;
+		padding-bottom: 113px;
+		margin-bottom: 0;
+
+		h2 {
+			margin-bottom: 38px;
+		}
+
+		&:after {
+			position: absolute;
+			content: '';
+			top: -100px;
+			right: 10px;
+			width: 215px;
+			height: 203px;
+			background: url(/local/templates/maxonor/assets/images/7_years.svg)
+				no-repeat center center;
+		}
+
+		&__gallery {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			margin: -20px -17px;
+			@include pin_card;
+
+			&__map {
+				width: calc(100% / 3 - 34px);
+				height: 265px;
+				margin: 20px 17px;
+				border-radius: 12px;
+				overflow: hidden;
+				cursor: pointer;
+
+				&:before {
+					position: absolute;
+					content: '';
+					background: url(/local/templates/maxonor/assets/images/resize.svg)
+						no-repeat center center;
+					width: 27px;
+					height: 27px;
+					top: 22px;
+					left: 21px;
+					opacity: 0;
+					visibility: hidden;
+					transition: all 0.2s ease-in-out;
+				}
+
+				&:hover {
+					&:before {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+
+				&__item {
+					&--desc {
+						p:first-of-type {
+							opacity: 0;
+							visibility: hidden;
+							@include ultra_small_text;
+							line-height: 17px;
+						}
+					}
+
+					> span:hover + div {
+						p:first-of-type {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+			}
+		}
+
+		.gallery_show_more {
+			margin-top: 62px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			display: inline-block;
+			@include section_card_title;
+			@include link_effects;
+		}
+	}
+
+	.collections {
+		background-color: #f5f6f8;
+		position: relative;
+		padding-bottom: 22px;
+
+		h2 {
+			margin-bottom: 38px;
+		}
+
+		.tabs_parent {
+			margin-bottom: 20px;
+		}
+
+		&__items {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
+			margin: -10px -17px;
+
+			li {
+				box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+					0px 0px 1px rgba(0, 0, 0, 0.4);
+				width: calc(25% - 34px);
+				padding: 22px 13px 16px;
+				background: linear-gradient(0deg, #cfd9df 0%, #e2ebf0 100%);
+				border-radius: 5px;
+				margin: 10px 17px;
+
+				.title {
+					@include section_card_title;
+					font-weight: 600;
+					padding-right: 31px;
+					position: relative;
+					width: fit-content;
+					color: $c-dark;
+					@include link_effects;
+
+					&:after {
+						position: absolute;
+						content: '';
+						right: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						background: url(/local/templates/maxonor/assets/images/dark_header/series_orange_arrow.svg)
+							no-repeat center center;
+						width: 20px;
+						height: 14px;
+					}
+				}
+
+				img {
+					width: 123px;
+					height: 137px;
+					object-fit: contain;
+					object-position: center center;
+					position: relative;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+
+		> p {
+			@include text_16;
+			color: #b9b9b9;
+			margin: 0 0 10px;
+		}
+	}
+
+	.color_selection {
+		h2 {
+			margin-bottom: 50px;
+		}
+
+		&--inner {
+			position: relative;
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.4) 4.43%,
+				rgba(0, 0, 0, 0) 97.79%
+			);
+			width: 100%;
+			height: 556px;
+			> img {
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease-in-out;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: -1;
+				&.show {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			> .tabs {
+				position: absolute;
+				bottom: 42px;
+				left: 50%;
+				transform: translateX(-50%);
+				margin: 0;
+				height: 59px;
+
+				li {
+					color: #fff;
+					min-width: 130px;
+					height: 55px;
+					overflow: hidden;
+
+					> img {
+						width: 30px;
+						height: 30px;
+						object-fit: cover;
+						object-position: center center;
+						border-radius: 100%;
+						overflow: hidden;
+						margin-right: 10px;
+					}
+
+					&.active {
+						color: $c-dark;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.breadcrumbs {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	position: absolute;
+	left: calc((100% - 1274px) / 2);
+	top: calc(89px + 17px);
+
+	@include breakpoint(desktop) {
+		left: 46px;
+	}
+
+	@include breakpoint(mobile-large) {
+		display: none;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		@include ultra_small_text;
+		line-height: 16px;
+		color: #fff;
+        user-select: none;
+        a {
+            color: #B3B3B5;
+            font-weight: 400 !important;
+            @include link_effects;
+        }
+	}
+
+	.divider {
+		width: 12px;
+		height: 6px;
+		background: url(/local/templates/maxonor/assets/images/breadcrumb-arrow.svg)
+			no-repeat center center;
+		display: block;
+		margin: 0 11px;
+	}
+}
+
+.header.header--light {
+    .breadcrumbs {
+        li {
+            color: $c-dark;
+            a {
+                color: #848487;
+				@include link_effects;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.company {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include section;
+
+    .wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include breakpoint(IPad-Pro) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        @include double_card;
+        position: relative;
+        @include breakpoint(IPad-Pro) {
+            width: 100%;
+        }
+
+        @include breakpoint(mobile-middle) {
+            height: 259px;
+        }
+
+        .wrap {
+            @include breakpoint(mobile-middle) {
+				height: 259px;
+			}
+
+            > .company_logo {
+                object-fit: contain;
+                object-position: center center;
+                width: 283px;
+                height: 107px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 150;
+
+                @include breakpoint(mobile-middle) {
+                    width: 196px;
+                    height: 74px;
+                }
+            }
+        }
+
+        &:first-child {
+            margin-right: 34px;
+            @include breakpoint(IPad-Pro) {
+                margin-right: 0;
+                margin-bottom: 71px;
+            }
+        }
+
+        .item--title {
+            @include double_card_title;
+        }
+    }
+}

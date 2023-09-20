@@ -1,0 +1,1 @@
+<h1 class="page_hero__title">Выдвижные смесители для&nbsp;кухни с&nbsp;технологией Smart</h1>

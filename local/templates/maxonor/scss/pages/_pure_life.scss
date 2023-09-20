@@ -1,0 +1,489 @@
+.page_pure_life {
+	.page_hero {
+		&__title {
+			display: flex;
+			align-items: center;
+			margin-bottom: 42px;
+
+			img {
+				margin-left: 18px;
+			}
+		}
+
+		p {
+			max-width: 50%;
+			color: #fff;
+			margin-bottom: 38px;
+		}
+
+		a {
+			color: #fff;
+			@include link_effects;
+		}
+	}
+
+	.tabs_parent {
+		margin-bottom: 65px;
+	}
+}
+
+.tabs {
+	@include tabs;
+}
+
+.production {
+	position: relative;
+	background-color: #f5f6f8;
+	padding-top: 44px;
+	padding-bottom: 113px;
+	margin-bottom: 0;
+
+	.warranty {
+		@include soon_sticker;
+	}
+
+	h2 {
+		margin-bottom: 38px;
+		margin-top: 16px;
+	}
+
+	// &:after {
+	// 	position: absolute;
+	// 	content: '';
+	// 	top: -100px;
+	// 	right: 10px;
+	// 	width: 215px;
+	// 	height: 203px;
+	// 	background: url(/local/templates/maxonor/assets/images/7_years.svg)
+	// 		no-repeat center center;
+	// }
+
+	&__gallery {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		// margin: -20px -17px;
+		margin: -20px 0;
+		@include pin_card;
+
+		@include breakpoint(mobile-large) {
+			margin: -20px 0;
+		}
+
+		&__tag {
+			color: #fff;
+			position: absolute;
+			padding: 5px 26px 4px 9px;
+			background: rgba(0, 0, 0, 0.5);
+			border-radius: 6px;
+			overflow: hidden;
+			bottom: 13px;
+			left: 16px;
+			font-size: 14px;
+			line-height: 17px;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .4s ease-in-out;
+
+			&:after {
+				position: absolute;
+				content: '';
+				background: url(/local/templates/maxonor/assets/images/dark_header/more-white.svg)
+					no-repeat center center;
+				background-size: contain;
+				width: 11px;
+				height: 8px;
+				right: 9px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&:hover {
+				color: $c-orange;
+			}
+
+			@include breakpoint(IPad-Pro) {
+				display: none;
+			}
+		}
+
+		&__map {
+			width: calc(100% / 3 - 34px);
+			// height: 265px;
+			height: auto;
+			// height: max-content;
+			margin: 20px 17px;
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			display: none !important;
+
+			a[data-lightbox='production__gallery'] {
+				display: block;
+				height: 100%;
+				width: 100%;
+				max-width: 100%;
+			}
+
+			img {
+				display: block;
+				border-radius: 12px;
+				overflow: hidden;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+				// object-fit: cover;
+				object-fit: contain;
+				object-position: center center;
+			}
+
+			&.show {
+				display: block !important;
+			}
+
+			@include breakpoint(IPad-Pro) {
+				width: calc(50% - 34px);
+			}
+
+			@include breakpoint(mobile-large) {
+				width: 100%;
+				margin: 20px 0;
+			}
+
+			// img {
+			// 	max-width: 100%;
+			// 	max-height: 100%;
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	object-fit: cover;
+			// 	object-position: center center;
+			// }
+
+			&:before {
+				position: absolute;
+				content: '';
+				background: url(/local/templates/maxonor/assets/images/resize.svg)
+					no-repeat center center;
+				width: 27px;
+				height: 27px;
+				top: 22px;
+				left: 21px;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.2s ease-in-out;
+
+				@include breakpoint(IPad-Pro) {
+					display: none;
+				}
+			}
+
+			&:hover {
+				&:before {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				.production__gallery__tag {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			// &__item {
+			// 	&--desc {
+			// 		p:first-of-type {
+			// 			opacity: 0;
+			// 			visibility: hidden;
+			// 			font-weight: 400;
+			// 			font-size: 12px;
+			// 			line-height: 17px;
+			// 		}
+			// 	}
+
+			// 	> span:hover + div {
+			// 		p:first-of-type {
+			// 			opacity: 1;
+			// 			visibility: visible;
+			// 		}
+			// 	}
+			// }
+		}
+	}
+}
+
+.gallery_show_more {
+	@include link_effects;
+	margin-top: 62px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block;
+	@include section_card_title;
+}
+
+.collections {
+	background-color: #f5f6f8;
+	position: relative;
+	padding-bottom: 22px;
+
+	h2 {
+		margin-bottom: 38px;
+	}
+
+	.tabs_parent {
+		margin-bottom: 20px;
+	}
+
+	&__items {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin: -10px -17px;
+
+		@include breakpoint(mobile-middle) {
+			margin: -10px 0;
+		}
+
+		a {
+			box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+				0px 0px 1px rgba(0, 0, 0, 0.4);
+			width: calc(25% - 34px);
+			padding: 22px 13px 16px;
+			background: linear-gradient(0deg, #cfd9df 0%, #e2ebf0 100%);
+			border-radius: 5px;
+			margin: 10px 17px;
+			height: 256px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			&:last-of-type {
+				justify-content: flex-end;
+			}
+
+			@include breakpoint(IPad-Pro) {
+				width: calc(100% / 3 - 34px);
+			}
+
+			@include breakpoint(IPad-Pro) {
+				width: calc(50% - 34px);
+			}
+
+			@include breakpoint(mobile-middle) {
+				width: 100%;
+				margin: 10px 0;
+			}
+
+			.title {
+				@include section_card_title;
+				font-weight: 600;
+				padding-right: 31px;
+				position: relative;
+				width: fit-content;
+				color: $c-dark;
+				@include link_effects;
+
+				&:after {
+					position: absolute;
+					content: '';
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					background: url(/local/templates/maxonor/assets/images/dark_header/series_orange_arrow.svg)
+						no-repeat center center;
+					width: 20px;
+					height: 14px;
+				}
+			}
+
+			img {
+				width: 154px;
+				height: 80%;
+				object-fit: contain;
+				object-position: center center;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		.slick-list {
+			margin: 0 -17px;
+			padding: 6px 0; // -6 for shadow-border
+		}
+
+		.slick-arrow {
+			width: 16px;
+			height: 16px;
+			background: url(/local/templates/maxonor/assets/images/slick-next-dark.svg)
+				no-repeat center center;
+			bottom: 0;
+			top: unset;
+			&:before {
+				display: none;
+			}
+		}
+
+		.slick-prev {
+			transform: translateY(0) rotate(-180deg);
+			left: 0;
+		}
+
+		.slick-next {
+			left: 64px;
+			transform: translateY(0);
+		}
+	}
+
+	> p {
+		@include text_16;
+		color: #b9b9b9;
+		margin: 0 0 10px;
+	}
+}
+
+.color_selection {
+	@include breakpoint(tablet-m) {
+		margin-bottom: 191px;
+	}
+
+	h2 {
+		margin-bottom: 50px;
+	}
+
+	&--inner {
+		position: relative;
+		background: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.4) 4.43%,
+			rgba(0, 0, 0, 0) 97.79%
+		);
+		width: 100%;
+		height: 556px;
+		border-radius: 12px;
+
+		> img {
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease-in-out;
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			border-radius: 12px;
+			overflow: hidden;
+
+			&.show {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			@include breakpoint(tablet-m) {
+				height: auto;
+				object-fit: contain;
+			}
+		}
+
+		.tabs_parent {
+			padding-bottom: 20px;
+			position: absolute;
+			bottom: 42px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0;
+			height: 79px;
+			border-radius: inherit;
+			width: auto;
+
+			@include breakpoint(tablet-m) {
+				bottom: -91px;
+			}
+
+			@include breakpoint(mobile-middle) {
+				left: 0;
+				transform: none;
+			}
+		}
+
+		.tabs {
+			height: 59px;
+
+			@include breakpoint(tablet-m) {
+				background: rgba(28, 27, 31, 0.17);
+			}
+
+			li {
+				color: #fff;
+				min-width: 130px;
+				height: 55px;
+				overflow: hidden;
+
+				> img {
+					min-width: 30px;
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					object-position: center center;
+					border-radius: 100%;
+					overflow: hidden;
+					margin-right: 10px;
+				}
+
+				&.active {
+					color: $c-dark;
+				}
+			}
+		}
+	}
+}
+
+.technologies {
+	h2 {
+		margin-bottom: 38px;
+	}
+
+	&--grid {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin: -19px -17px;
+
+		@include breakpoint(tablet-md) {
+			margin: -16px 0;
+		}
+	}
+
+	&__item {
+		@include double_card;
+		width: calc(50% - 34px);
+		height: auto;
+		margin: 19px 17px;
+
+		@include breakpoint(tablet-md) {
+			width: 100%;
+			margin: 16px 0;
+		}
+
+		.item--title {
+			@include double_card_title;
+			@include link_effects;
+		}
+
+		.wrap {
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

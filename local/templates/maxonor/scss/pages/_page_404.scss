@@ -1,0 +1,53 @@
+.page_404 {
+	height: 516px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 0;
+
+	@include breakpoint(mobile-large) {
+		height: 100vh;
+	}
+
+	h1 {
+		@include light_page_h2;
+		margin-bottom: 17px;
+		margin-top: 40px;
+	}
+
+	&:before {
+		position: absolute;
+		content: '404';
+		font-weight: 600;
+		font-size: 380px;
+		line-height: 450px;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -141px;
+		color: $c-dark;
+
+		@include breakpoint(tablet-m) {
+			font-size: 280px;
+		}
+
+		@include breakpoint(mobile-large) {
+			font-size: 170px;
+			bottom: -175px;
+		}
+
+		@include breakpoint(mobile-small) {
+			font-size: 150px;
+			bottom: -180px;
+		}
+	}
+
+	img {
+		position: absolute;
+		z-index: -1;
+		top: 17px;
+		left: 0;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: center center;
+	}
+}

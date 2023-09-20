@@ -1,0 +1,85 @@
+.ceramic_cartridges {
+	h2 {
+		margin-bottom: 16px;
+	}
+
+	&--inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include breakpoint(laptop) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		> ul {
+			margin-right: 45px;
+
+			li {
+				@include text;
+				line-height: 23px;
+				color: #67636d;
+				padding-left: 41px;
+				position: relative;
+
+				&:not(:last-of-type) {
+					margin-bottom: 52px;
+				}
+
+				span {
+					position: absolute;
+					left: 0;
+					top: 0;
+					display: block;
+					width: 21px;
+					height: 21px;
+					background-color: #F6BA8C;
+					border-radius: 50%;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+
+	&--image {
+		display: flex;
+		justify-content: center;
+		margin-right: -23px;
+		margin-top: 30px;
+		position: relative;
+
+		@include breakpoint(mobile-middle) {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			padding-bottom: 200px;
+			margin-right: 0;
+		}
+
+		img {
+			@include breakpoint(laptop) {
+				object-fit: contain;
+				object-position: center center;
+				max-width: 50%;
+			}
+
+			@include breakpoint(mobile-middle) {
+				max-width: 100%;
+			}
+		}
+
+		img:last-of-type {
+			margin-top: 128px;
+			margin-left: -55px;
+
+			@include breakpoint(mobile-middle) {
+				position: absolute;
+				bottom: -70px;
+				left: 0;
+				margin: 0;
+			}
+		}
+	}
+}

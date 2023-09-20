@@ -1,0 +1,123 @@
+.header {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	width: 100%;
+	height: 89px;
+	background: transparent;
+	padding: 10px calc((100vw - 1274px) / 2) 27px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include breakpoint(desktop) {
+		padding: 10px 46px 27px;
+	}
+
+	@include breakpoint(laptop) {
+		padding: 10px 30px 27px;
+	}
+
+	@include breakpoint(mobile-middle) {
+		padding: 10px 15px 27px;
+	}
+
+	a {
+		color: white;
+	}
+
+	&__part {
+		display: flex;
+		align-items: center;
+		@include breakpoint(tablet-md) {
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+
+	.logo {
+		@include logo;
+		margin-right: 83px;
+		@include breakpoint(laptop) {
+			margin-right: 20px;
+		}
+		@include breakpoint(mobile-small) {
+			width: 84px;
+			height: 32px;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+		&__item {
+			margin-left: 40px;
+			transition: all 0.2s ease-in-out;
+
+			@include breakpoint(laptop) {
+				margin-left: 20px;
+			}
+
+			> a {
+				@include link;
+				white-space: nowrap;
+			}
+
+			@include breakpoint(pre-tablet) {
+				display: none;
+			}
+		}
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+
+		&--phone {
+			@include link;
+			@include phone_link;
+			margin-right: 9px;
+		}
+
+		&--request {
+			@include ultra_small_text;
+			@include link_effects;
+
+			@include breakpoint(IPad-Pro) {
+				width: 60px;
+			}
+		}
+
+		@include breakpoint(pre-tablet) {
+			display: none;
+		}
+	}
+}
+
+.header.header--light {
+	background-color: #fff;
+
+	&:not(.menu_opened) {
+		.header__menu > li,
+		.header__part {
+			a {
+				color: $c-dark;
+				@include link;
+			}
+		}
+	}
+
+	.logo {
+		background: url(/local/templates/maxonor/assets/images/light_header/logo.svg)
+			no-repeat center center;
+	}
+
+	&.menu_opened {
+		.logo {
+			background: url(/local/templates/maxonor/assets/images/dark_header/logo.svg)
+				no-repeat center center;
+		}
+	}
+}

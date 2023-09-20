@@ -1,0 +1,48 @@
+.contacts {
+	@include section;
+	margin-bottom: 160px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 78px;
+		position: relative;
+		@include breakpoint(mobile-large) {
+			margin-bottom: 85px;
+		}
+		&:before {
+			position: absolute;
+			content: '';
+			left: -8px;
+			top: -11px;
+			width: 83px;
+			height: 68px;
+			background: url(/local/templates/maxonor/assets/images/section_contacts_ellips.svg)
+				no-repeat center center;
+			z-index: -1;
+			@include breakpoint(mobile-large) {
+				left: 24px;
+				top: -15px;
+			}
+		}
+	}
+
+	&__links {
+		p {
+			@include text;
+			line-height: 30px;
+			a {
+				@include link_effects;
+                font-weight: 700;
+                &:hover {
+                    text-decoration: underline;
+                }
+			}
+
+			&:first-of-type {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

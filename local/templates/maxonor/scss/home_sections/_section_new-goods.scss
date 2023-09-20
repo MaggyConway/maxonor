@@ -1,0 +1,54 @@
+.new-goods {
+	@include section;
+
+	&__slider {
+		margin: 35px 0 -6px; // -6 for shadow-border
+		padding-bottom: 52px;
+		@include breakpoint(mobile-small) {
+			margin-top: calc(32px - 6px); // -6 for shadow-border
+		}
+
+		&__item {
+			@include card_item;
+			min-height: 256px;
+			padding: 0 !important;
+
+			img {
+				height: 189px;
+				margin-bottom: 2px;
+			}
+
+			.card_title_block {
+				padding-top: 0;
+				padding-bottom: 21px;
+			}
+		}
+
+		.slick-list {
+			margin: 0 -17px;
+			padding: 6px 0; // -6 for shadow-border
+		}
+
+		.slick-arrow {
+			width: 16px;
+			height: 16px;
+			background: url(/local/templates/maxonor/assets/images/slick-next-dark.svg)
+				no-repeat center center;
+			bottom: 0;
+			top: unset;
+			&:before {
+				display: none;
+			}
+		}
+
+		.slick-prev {
+			transform: translateY(0) rotate(-180deg);
+			left: 0;
+		}
+
+		.slick-next {
+			left: 64px;
+			transform: translateY(0);
+		}
+	}
+}

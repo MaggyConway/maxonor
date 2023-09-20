@@ -1,0 +1,130 @@
+@mixin text {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	color: $c-dark;
+
+    @include breakpoint(laptop-mini) {
+        font-size: 16px;
+    }
+    
+	@include breakpoint(mobile-middle) {
+		font-size: 14px;
+		line-height: 130%;
+	}
+}
+
+@mixin small_text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+@mixin ultra_small_text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@mixin middle_text {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 30px;
+}
+
+@mixin h1 {
+	font-weight: 500;
+	font-size: 50px;
+	line-height: 59px;
+	text-shadow: 0px 32px 32px rgba(0, 0, 0, 0.08),
+		0px 0px 32px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+    @include breakpoint(mobile-large) {
+        font-size: 42px;
+        line-height: 47px;
+    }
+
+    @include breakpoint(mobile-middle) {
+        font-size: 30px;
+        line-height: 110%;
+        margin-bottom: 30px;
+    }
+}
+
+@mixin h2 {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 130%;
+	color: $c-dark;
+	margin-bottom: 38px;
+
+	@include breakpoint(tablet-m) {
+		font-size: 26px;
+		margin-bottom: 32px !important;
+	}
+
+    @include breakpoint(mobile-middle) {
+        font-size: 20px;
+    }
+}
+
+@mixin light_page_h2 {
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 47px;
+	color: $c-dark;
+}
+
+@mixin h3 {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	color: #fff;
+	margin-bottom: 16px;
+}
+
+@mixin text_16 {
+    font-weight: 400;
+	font-size: 16px;
+    line-height: 32px;
+}
+
+@mixin product_card_title {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	color: $c-dark;
+	margin-bottom: 4px;
+}
+
+@mixin section_card_title {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+
+    @include breakpoint(mobile-large) {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+@mixin double_card_title {
+    @include section_card_title;
+	font-weight: 600;
+	color: #67636d;
+	text-align: center;
+	padding-right: 28px;
+}
+
+h1 {
+	@include h1;
+}
+
+h2 {
+	@include h2;
+}
+
+h3 {
+	@include h3;
+}

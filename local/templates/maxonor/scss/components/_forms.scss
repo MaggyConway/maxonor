@@ -1,0 +1,505 @@
+.b24-form {
+	border: none;
+	width: 540px;
+	max-width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background: #f5f5f6;
+	border-radius: 12px;
+	overflow: hidden;
+
+	.b24-form-wrapper {
+		background: #f5f5f6;
+	}
+
+	.b24-form-field-list:last-child {
+		display: none;
+	}
+
+	.b24-form-header-description {
+		@include text;
+		text-align: center;
+		margin-bottom: 23px;
+	}
+
+	.b24-form-border-bottom,
+	.b24-form-header {
+		border: none !important;
+	}
+
+	.b24-form-padding-side,
+	.b24-form-control-icon-after .b24-form-control,
+	.b24-form-control-icon-after .b24-form-control-label {
+		padding: 0;
+	}
+
+	.b24-form-header-title {
+		@include middle_text;
+		color: $c-dark;
+		margin-bottom: 9px;
+		font-family: "Rubik", sans-serif;
+	}
+
+	.b24-form-field {
+		margin-bottom: 20px;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 320px;
+		height: 55px;
+	}
+
+	input {
+		@include input;
+		height: 55px;
+		padding: 16px 16px 15px !important;
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-bottom: 38px;
+			@include breakpoint(mobile-small) {
+				margin-bottom: 27px;
+			}
+		}
+
+		@include breakpoint(mobile-small) {
+			margin-bottom: 16px;
+		}
+	}
+
+	.b24-form-control-label {
+		padding: 16px 16px 15px !important;
+		color: #9d9fa3;
+		opacity: 1;
+		font-size: 18px;
+	}
+
+	.b24-form-control-select-label,
+	.b24-form-control:focus + .b24-form-control-label,
+	.b24-form-control-not-empty + .b24-form-control-label {
+		top: -32px;
+		font-size: 13px;
+		padding-left: 0 !important;
+	}
+
+	.b24-form-control-string .b24-form-control:focus,
+	.b24-form-control-list .b24-form-control:focus,
+	.b24-form-control-text .b24-form-control:focus,
+	.b24-form-control-select .field-item:focus {
+		border-color: $c-orange;
+		background-color: transparent;
+	}
+
+	.b24-form-control-alert.b24-form-control-checkbox,
+	.b24-form-control-alert.b24-form-control-radiobox,
+	.b24-form-control-alert.b24-form-control-file,
+	.b24-form-control-alert.b24-form-control-list .b24-form-control,
+	.b24-form-control-alert.b24-form-control-string .b24-form-control,
+	.b24-form-control-alert.b24-form-control-text .b24-form-control {
+		background-color: rgba(242, 48, 116, 0.08);
+		border-color: rgba(242, 48, 119, 0.25);
+	}
+
+	.b24-form-control-alert-message {
+		background: #f23077;
+	}
+
+	.b24-form-btn {
+		min-height: unset;
+		width: 231px;
+		height: 52px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #f88122;
+		border-radius: 25px;
+		overflow: hidden;
+		color: #fff;
+		@include section_card_title;
+		padding: 14px 78px 14px 47px;
+		cursor: pointer;
+		position: relative;
+		&:after {
+			position: absolute;
+			content: '';
+			right: 46px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 17px;
+			height: 12px;
+			background: url(/local/templates/maxonor/assets/images/dark_header/more.svg)
+				no-repeat center center;
+			@include breakpoint(mobile-small) {
+				right: 26px;
+			}
+		}
+
+		@include breakpoint(mobile-small) {
+			width: 180px;
+			height: 46px;
+			padding: 6px 50px 8px 20px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			@include btn_active;
+		}
+	}
+
+	.b24-form-btn-block {
+		flex: unset;
+	}
+
+	.b24-form-btn-container {
+		justify-content: center;
+		align-items: center;
+	}
+
+	label.b24-form-control-container {
+		display: flex;
+		align-items: flex-start;
+		position: relative;
+	}
+
+	input[type='checkbox'] {
+		display: none;
+	}
+
+	.b24-form-control-desc {
+		padding-left: 40px;
+		opacity: 1 !important;
+		&:before {
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			border: 2px solid #e5e8ec;
+			border-radius: 2px;
+			background: transparent;
+			z-index: 50;
+			transition: all 0.2s ease-in-out;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		.b24-form-field-agreement-link {
+			opacity: 0.5;
+		}
+	}
+
+	input[type='checkbox']:checked + .b24-form-control-desc:before {
+		background-color: $c-orange;
+		border-color: $c-orange;
+		background-image: url(../assets/images/accept.svg);
+	}
+}
+
+.form_request {
+	margin-top: 50px;
+	background: #f5f5f6;
+	border-radius: 12px;
+	overflow: hidden;
+	padding: 35px 40px 51px;
+	text-align: center;
+	max-width: 511px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+
+	@include breakpoint(mobile-small) {
+		padding: 32px 20px 60px;
+	}
+
+	&__title {
+		@include middle_text;
+		color: $c-dark;
+		margin-bottom: 9px;
+	}
+
+	p {
+		margin-bottom: 23px;
+	}
+
+	input {
+		@include input;
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-bottom: 38px;
+			@include breakpoint(mobile-small) {
+				margin-bottom: 27px;
+			}
+		}
+
+		@include breakpoint(mobile-small) {
+			margin-bottom: 16px;
+		}
+	}
+
+	button {
+		width: 231px;
+		height: 52px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #f88122;
+		border-radius: 25px;
+		overflow: hidden;
+		color: #fff;
+		@include section_card_title;
+		padding: 14px 78px 14px 47px;
+		cursor: pointer;
+		position: relative;
+		&:after {
+			position: absolute;
+			content: '';
+			right: 46px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 17px;
+			height: 12px;
+			background: url(/local/templates/maxonor/assets/images/dark_header/more.svg)
+				no-repeat center center;
+			@include breakpoint(mobile-small) {
+				right: 26px;
+			}
+		}
+
+		@include breakpoint(mobile-small) {
+			width: 180px;
+			height: 46px;
+			padding: 6px 50px 8px 20px;
+		}
+	}
+}
+
+.request_call {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+
+	&--modal {
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease-in-out;
+		width: 511px;
+		height: 400px;
+		overflow: hidden;
+		background: #f5f5f6;
+		border-radius: 12px;
+		padding: 35px 35px 53px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		@include breakpoint(mobile-large) {
+			width: calc(100% - 70px);
+		}
+
+		@include breakpoint(mobile-middle) {
+			height: 420px;
+			width: calc(100% - 40px);
+		}
+
+		@include breakpoint(mobile-small) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		&__title {
+			@include middle_text;
+			margin-bottom: 9px;
+			text-align: center;
+			white-space: nowrap;
+
+			& + p {
+				text-align: center;
+				max-width: 235px;
+				margin: 0 auto;
+				line-height: 130%;
+			}
+		}
+
+
+		> .cross {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			padding: 5px;
+			background: url(/local/templates/maxonor/assets/images/modal_cross.svg)
+				no-repeat center center;
+			background-size: 15px 15px;
+			top: 15px;
+			right: 17px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				transform: rotate(-180deg);
+			}
+		}
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&--bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	.b24-form {
+		@include text;
+		padding: 0;
+		margin: 0;
+
+		&-header {
+			display: none;
+		}
+
+		&-wrapper {
+			background: none;
+			border: none !important;
+		}
+
+		&-padding-side {
+			padding: 0;
+		}
+
+		&-btn-container {
+			margin-top: 10px;
+			@include breakpoint(mobile-middle) {
+				margin-top: 25px;
+			}
+			@include breakpoint(mobile-small) {
+				margin-top: 40px;
+			}
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			margin-top: 34px;
+
+			input:not(input[type='checkbox']) {
+				@include input;
+				margin-bottom: 34px;
+				height: 55px !important;
+			}
+
+			button {
+				width: 215px;
+				height: 52px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #f88122;
+				border-radius: 25px;
+				overflow: hidden;
+				color: #fff;
+				@include section_card_title;
+				padding: 14px 78px 14px 47px;
+				cursor: pointer;
+				position: relative;
+				&:after {
+					position: absolute;
+					content: '';
+					right: 46px;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 17px;
+					height: 12px;
+					background: url(/local/templates/maxonor/assets/images/dark_header/more.svg)
+						no-repeat center center;
+					@include breakpoint(mobile-small) {
+						right: 26px;
+					}
+				}
+
+				@include breakpoint(mobile-small) {
+					width: 180px;
+					height: 46px;
+					padding: 6px 50px 8px 20px;
+				}
+
+				&.btn_success {
+					margin-top: 100px;
+					font-size: 16px;
+					text-align: center;
+					padding: 0;
+
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.page_files {
+	.b24-form {
+		padding: 0;
+		background: none;
+		width: 511px;
+
+		.b24-form-header {
+			display: none;
+		}
+
+		.b24-form-wrapper {
+			background: none;
+		}
+
+		.b24-form-field {
+			margin-bottom: 30px;
+			left: unset;
+			transform: none;
+			max-width: unset;
+			height: 57px;
+			width: 100%;
+			max-width: 100%;
+
+			&.b24-form-field-text {
+				height: auto;
+			}
+		}
+
+		input {
+			height: 57px;
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.b24-form-btn-container {
+			justify-content: flex-start;
+		}
+
+		.b24-form-field-agreement {
+			margin-bottom: 10px;
+			label.b24-form-control-container {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

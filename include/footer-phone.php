@@ -1,0 +1,1 @@
+<a href="tel:+74951343405" class="footer__phone">+7 (495) 134-34-05</a>

@@ -1,0 +1,59 @@
+// <!--  как сделать блок "читать ещё":
+
+// <div class="readmore">
+//     <div class="readmore__desc">
+//         Если для&nbsp;Вас дом не&nbsp;просто место проживания, но&nbsp;и&nbsp;отражение Вашего стиля жизни, то&nbsp;Maxonor – это&nbsp;именно то&nbsp;что Вам нужно. Нашу продукцию отличает разнообразие стилей и&nbsp;используемых отделок помноженное на&nbsp;безупречное качество (гарантия до&nbsp;7 лет). Смесители для&nbsp;раковины, ванной и&nbsp;кухни, а&nbsp;также душевые системы объединены в&nbsp;коллекции, которые помогут Вам реализовать наиболее интересные дизайнерские решения. Добавим сюда передовые европейские технологические разработки (встроенные фильтры питьевой воды, термоэлементы, сенсорные смесители, смесители с&nbsp;технологией Smart позволяющие управлять потоком воды нажатием кнопки) и&nbsp;перед Вами новое направление дизайнерской сантехники.
+//     </div>
+//     <span class="readmore__link">Читать ещё</span>
+// </div>
+
+
+.readmore {
+    max-height: 112px;
+    margin-bottom: 29px;
+    position: relative;
+    overflow: hidden;
+
+    &__link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        color: $c-orange;
+        background: linear-gradient(0deg, #fff 25%, transparent);
+        width: 100%;
+        @include link_effects;
+    }
+
+    &__desc {
+        @include text;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    
+        &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.2s ease-in-out;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.86) 25%
+            );
+        }
+    
+        &.show {
+            height: auto;
+            &:after {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.catalog-sections {
+	@include section;
+
+	h2 {
+		margin-bottom: 38px;
+		position: relative;
+		max-width: 970px;
+		@include breakpoint(mobile-small) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__desc {
+		margin-bottom: 54px;
+		p {
+			color: #67636D;
+			&:not(:last-of-type) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.catalog-sections__list {
+		height: 788px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: -35px -17px;
+
+		@include breakpoint(IPad-Pro) {
+			flex-direction: row;
+			height: auto;
+		}
+
+		// @include breakpoint(tablet-md) {
+		// 	height: 921px; //////////////////////////////
+		// }
+		@include breakpoint(tablet-m) {
+			margin: -16px 0;
+		}
+
+		> li {
+			margin: 35px 17px;
+			height: calc(273px + 15px + 36px);
+			width: calc(100% / 3);
+			background-size: cover !important;
+			position: relative;
+
+			@include breakpoint(IPad-Pro) {
+				width: calc(50% - 34px);
+			}
+
+			@include breakpoint(tablet-m) {
+				width: 100%;
+				margin: 16px 0;
+			}
+
+			&:nth-of-type(5) {
+				width: 25%;
+				margin-right: auto;
+				height: 490px;
+
+				@include breakpoint(IPad-Pro) {
+					width: calc(50% - 34px);
+					margin-right: 0;
+				}
+
+				@include breakpoint(tablet-m) {
+					width: 100%;
+				}
+
+				img {
+					height: 435px;
+				}
+			}
+
+			> a {
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				> img {
+					width: 100%;
+					max-width: 100%;
+					height: 273px;
+					object-fit: cover;
+					object-position: center center;
+					border-radius: 12px;
+					overflow: hidden;
+				}
+
+				&:disabled,
+				&[disabled] {
+					background: none;
+					color: #ededed;
+				}
+
+				span {
+					position: relative;
+					display: block;
+					@include section_card_title;
+					color: #67636d;
+					margin-top: 15px;
+					@include link_effects;
+
+					&:after {
+						position: static;
+						content: '';
+						display: inline-block;
+						margin-left: 9px;
+						background: url(/local/templates/maxonor/assets/images/more.svg)
+							no-repeat center center;
+						width: 17px;
+						height: 12px;
+					}
+
+					@include breakpoint(mobile-small) {
+						width: 88%;
+					}
+				}
+			}
+		}
+	}
+}

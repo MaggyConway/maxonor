@@ -1,0 +1,27 @@
+.in_details {
+	@include pin_card;
+
+	h2 {
+		margin-bottom: 77px;
+	}
+
+	&__map__item {
+        @include breakpoint(tablet-md) {
+            display: none;
+        }
+    }
+
+	.mobile_content {
+		ul {
+			li {	
+				&:not(:last-of-type) {
+					margin-bottom: 27px;
+				}
+			}
+		}
+	}
+}
+
+// 1% = 13,66px --- width 1366 in design
+
+// 1% = 7,02px --- height in design

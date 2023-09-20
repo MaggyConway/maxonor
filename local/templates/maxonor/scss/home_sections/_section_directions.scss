@@ -1,0 +1,79 @@
+.directions {
+    @include section;
+	
+	h2 {
+		margin-bottom: 19px;
+		b {
+			color: $c-orange;
+		}
+		@include breakpoint(mobile-small) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&--wrap {
+		margin-top: 82px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include breakpoint(tablet) {
+			margin-top: 50px;
+		}
+		@include breakpoint(mobile-large) {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+		@include breakpoint(mobile-small) {
+			margin-top: 32px;
+		}
+	}
+
+	&__item {
+		@include double_card;
+		width: 100%;
+		max-width: 100%;
+		height: 628px;
+
+		@include breakpoint(tablet-md) {
+			height: 350px;
+		}
+
+		> .wrap {
+			background: none;
+		}
+
+		.item--title {
+			@include double_card_title;
+		}
+
+		> p {
+			@include text_16;
+			line-height: 23px;
+            margin-bottom: 26px;
+			@include breakpoint(tablet-md) {
+				visibility: hidden;
+				height: 10px;
+			}
+			@include breakpoint(tablet) {
+				visibility: hidden;
+				height: 40px;
+			}
+		}
+
+        > img {
+            width: 209px;
+            height: 65px;
+            object-fit: contain;
+            object-position: center center;
+        }
+
+		&:first-child {
+			margin-right: 34px;
+            background: url(/local/templates/maxonor/assets/images/pure_life_bg.png) no-repeat center center;
+			@include breakpoint(mobile-large) {
+				margin-right: 0;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}

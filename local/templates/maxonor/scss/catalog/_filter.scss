@@ -1,0 +1,69 @@
+.bx-filter {
+	margin-right: 34px;
+	max-width: 327px;
+	width: 327px;
+	min-width: 327px;
+
+	&-parameters-box {
+		margin-bottom: 52px;
+
+		&-title {
+			padding-bottom: 0 !important;
+			font-family: 'Rubik', sans-serif;
+			@include h3;
+			font-size: 18px !important;
+		}
+
+		&-hint {
+			color: $c-dark !important;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: none !important;
+
+			> .fa {
+				&:before {
+					font-size: 30px;
+				}
+			}
+		}
+
+		&-container {
+			padding: 0;
+		}
+
+		.bx-filter-container-modef {
+			display: none !important;
+		}
+	}
+
+    .chboxes {
+        margin: -6px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+	&-param-label {
+		padding: 0 !important;
+        margin: 6px;
+	}
+
+	&-input-checkbox {
+		> input {
+			display: none;
+		}
+
+		> span {
+			@include btn;
+		}
+
+		> input:checked + span {
+            @include btn_active;
+		}
+	}
+
+	&-block {
+		margin-top: 27px;
+	}
+}

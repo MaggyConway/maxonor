@@ -1,0 +1,60 @@
+// BASE
+// @import '../assets/fonts/fonts';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+@import 'base/variables';
+@import 'base/media';
+@import 'base/typography';
+@import 'base/mixins';
+@import 'base/elements';
+
+// CATALOG COMPONENTS
+@import 'catalog/section';
+@import 'catalog/filter';
+@import 'catalog/card_item';
+@import 'catalog/element';
+
+// COMPONENTS
+@import 'components/header';
+@import 'components/footer';
+@import 'components/main_menu';
+@import 'components/header_search';
+@import 'components/forms';
+@import 'components/breadcrumbs';
+@import 'components/tabs';
+@import 'components/soon';
+@import 'components/readmore';
+
+// HOMEPAGE SECTIONS
+@import 'home_sections/section_hero';
+@import 'home_sections/section_directions';
+
+// @import 'home_sections/section_catalog-sections';
+@import 'home_sections/shop_sections';
+
+@import 'home_sections/section_new-goods';
+@import 'home_sections/section_company';
+@import 'home_sections/section_contacts';
+
+// PAGES SECTIONS
+@import 'page_sections/page_hero';
+@import 'page_sections/page_description';
+@import 'page_sections/page_facts';
+@import 'page_sections/maxonor_values';
+@import 'page_sections/page_partners';
+@import 'page_sections/page_videos';
+@import 'page_sections/page_contacts';
+@import 'page_sections/page_in_details';
+@import 'page_sections/ceramic_cartridges';
+@import 'page_sections/aerators';
+@import 'page_sections/faucets_with_filter';
+@import 'page_sections/sertificates';
+@import 'page_sections/page_service_centers';
+
+// PAGES
+@import 'pages/pure_life';
+@import 'pages/collections';
+@import 'pages/collection_detail';
+@import 'pages/page_tech';
+@import 'pages/page_404';
+@import 'pages/page_category';
+@import 'pages/files';

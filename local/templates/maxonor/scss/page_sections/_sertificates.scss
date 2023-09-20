@@ -1,0 +1,25 @@
+.sertificates {
+    h2 {
+        margin-bottom: 38px;
+        & + p {
+            color: #67636D;
+            max-width: 510px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &--inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding-top: 14px;
+        position: relative;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 93px;
+        }
+    }
+}

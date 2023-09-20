@@ -1,0 +1,64 @@
+.maxonor_values {
+	ul {
+		li {
+			width: calc((100% / 3) - 34px);
+			padding-top: 33px;
+
+			@include breakpoint(tablet-md) {
+				width: calc(50% - 34px);
+			}
+
+			@include breakpoint(tablet) {
+				width: 100%;
+				padding-bottom: 16px;
+			}
+
+			@include breakpoint(mobile-small) {
+				padding: 42px 8px 19px;
+				overflow: visible;
+			}
+
+			br {
+				@include breakpoint(mobile-small) {
+					display: none;
+				}
+			}
+
+			&:last-of-type {
+				@include breakpoint(tablet-md) {
+					width: 100%;
+					margin: 17px 0;
+				}
+			}
+
+			&:first-of-type {
+				padding-top: 33px;
+			}
+
+			span {
+				font-size: 27px;
+				margin-bottom: 38px;
+
+				@include breakpoint(mobile-small) {
+					margin-bottom: 20px;
+				}
+			}
+
+			p {
+				@include text;
+				line-height: 30px;
+
+				@include breakpoint(mobile-small) {
+					font-size: 15px;
+					line-height: 26px;
+				}
+			}
+
+			img {
+				@include breakpoint(mobile-small) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

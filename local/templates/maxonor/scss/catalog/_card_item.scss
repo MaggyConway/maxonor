@@ -1,0 +1,153 @@
+@mixin card_item {
+	background: #fff;
+	box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+		0px 0px 1px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	margin: 0 17px;
+	position: relative;
+	padding: 21px 13px 19px;
+	transition: all 0.2s ease-in-out;
+
+	.item--sticker {
+		@include ultra_small_text;
+		text-transform: uppercase;
+		color: #fff;
+		background-color: $c-orange;
+		padding: 3px 5px 2px;
+		width: fit-content;
+		border-radius: 4px;
+		position: absolute;
+		top: 9px;
+		left: 8px;
+	}
+
+	img {
+		width: 100%;
+		max-width: 100%;
+		object-fit: contain;
+		object-position: center center;
+	}
+
+	.item--name {
+		@include product_card_title;
+	}
+
+	.item--category {
+		@include small_text;
+		line-height: 17px;
+		color: $c-dark;
+	}
+
+	.card_title_block {
+		padding: 12px 13px 13px;
+	}
+
+	&:hover {
+		box-shadow: 6px 6px 12px -6px rgba(0, 0, 0, 0.2),
+			0px 0px 1px rgba(0, 0, 0, 0.4);
+
+		.item--name {
+			color: $c-dark-orange;
+		}
+	}
+
+	&:active {
+		box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+			0px 0px 1px rgba(0, 0, 0, 0.4);
+
+		.item--name {
+			color: $c-orange-active;
+		}
+	}
+
+	&:disabled,
+	&[disabled],
+	&[disabled='disabled'] {
+		background: #e3e3e3;
+		box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+			0px 0px 1px rgba(0, 0, 0, 0.4);
+
+		.item--name {
+			color: $c-disabled;
+		}
+	}
+}
+
+// @mixin slider_card_item {}
+
+.product-item-container {
+	width: calc(100% / 3 - 34px);
+	margin: 25px 17px;
+
+	@include breakpoint(laptop-mini) {
+		width: calc(50% - 34px);
+	}
+
+	@include breakpoint(tablet-m) {
+		width: 100%;
+	}
+
+	@include breakpoint(tablet) {
+		width: calc(50% - 34px);
+	}
+
+	@include breakpoint(mobile-middle) {
+		width: 100%;
+	}
+}
+
+.product-item {
+	@include card_item;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 0;
+	padding: 0 !important;
+	border: none !important;
+
+	&-image-wrapper {
+		padding: 0 !important;
+		margin-bottom: 10px !important;
+	}
+
+	.card_item_price {
+		@include product_card_title;
+		margin: 4px 0 0;
+	}
+
+	&-title {
+		a {
+			@include product_card_title;
+		}
+
+		p {
+			@include small_text;
+			line-height: 17px;
+			display: block;
+			margin: 0;
+			&:first-letter {
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&-image-original {
+		height: 244px !important;
+		position: static !important;
+		background-size: cover !important;
+	}
+
+	&-image-alternative {
+		display: none;
+	}
+}
+
+.products_grid_row {
+	> .product-item-container:last-child {
+		@include breakpoint(laptop-mini) {
+			width: 100%;
+		}
+	}
+}

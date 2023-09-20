@@ -1,0 +1,7 @@
+.tabs_parent {
+    @include tabs_parent;
+}
+
+.tabs {
+    @include tabs;
+}

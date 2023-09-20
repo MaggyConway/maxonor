@@ -1,0 +1,90 @@
+#search_toggle {
+	margin-right: 65px;
+	width: 20px;
+	height: 20px;
+	background: url(/local/templates/maxonor/assets/images/dark_header/lupa.svg)
+		no-repeat center center;
+	cursor: pointer;
+	&.active {
+		background: url(/local/templates/maxonor/assets/images/cross.svg)
+			no-repeat center center;
+		z-index: 2;
+	}
+
+	@include breakpoint(desktop-small) {
+		margin-right: 15px;
+	}
+}
+
+.header__search {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	background: white;
+	opacity: 0.3;
+	visibility: hidden;
+	padding: 227px 0 100px; // 138+89 = 227
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	&__field {
+		@include search_field;
+		margin-bottom: 24px;
+	}
+
+	&__result {
+		margin-top: 57px;
+		.product-item-container {
+			width: calc(25% - 34px);
+            min-height: 334px;
+
+			.good-item__image {
+				width: auto;
+				height: 244px;
+			}
+		}
+
+		.products_grid_row {
+			margin: -25px -17px;
+		}
+	}
+
+	&.opened {
+		opacity: 1;
+		visibility: visible;
+		z-index: 400;
+	}
+}
+
+.header {
+	&--light {
+		#search_toggle:not(.active), #search_toggle-mobile:not(.active) {
+			background: url(/local/templates/maxonor/assets/images/light_header/lupa.svg)
+				no-repeat center center;
+		}
+	}
+}
+
+body.search--opened {
+	.logo {
+		position: absolute;
+		z-index: 100;
+		background: url(/local/templates/maxonor/assets/images/light_header/logo.svg)
+			no-repeat center center;
+	}
+
+	.header__menu,
+	.main_menu_toggle,
+	.breadcrumbs,
+	.header__links > a {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.header {
+		background-color: #fff;
+	}
+}

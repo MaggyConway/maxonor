@@ -1,0 +1,35 @@
+.main_menu__sidebar .submenu>li>a.main_menu-soon:before {
+    background-image: none;
+}
+
+#search_toggle-mobile {
+    display: none;
+    margin-right: 65px;
+    width: 20px;
+    height: 20px;
+    background: url(/local/templates/maxonor/assets/images/dark_header/lupa.svg) no-repeat center center;
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: -5px;
+}
+
+#search_toggle-mobile.active {
+    background: url(/local/templates/maxonor/assets/images/cross.svg) no-repeat center center;
+    z-index: 2;
+}
+
+@media screen and (max-width: 992px) {
+    #search_toggle-mobile {
+        display: block;
+    }
+    .header__search__result .product-item-container {
+        width: calc(50% - 34px);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header__search__result .product-item-container {
+        width: 100%;
+    }
+}

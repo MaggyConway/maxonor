@@ -1,0 +1,126 @@
+.page_collections {
+	background-color: #f5f6f8;
+	padding-top: 73px;
+	padding-bottom: 160px;
+
+	h1 {
+		margin-bottom: 57px;
+		@include light_page_h2;
+	}
+
+	.tabs_parent {
+		margin-bottom: 20px;
+	}
+
+	.collections__items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 256px;
+		grid-gap: 58px 34px;
+		margin: 0;
+
+		@include breakpoint(laptop-mini) {
+			grid-gap: 34px;
+			grid-template-rows: 170px;
+		}
+
+		@include breakpoint(tablet-md) {
+			display: flex;
+		}
+
+		> a {
+			width: 100%;
+			height: 256px;
+			margin: 0;
+
+			&:not(.technologies__item) {
+				@include breakpoint(laptop-mini) {
+					height: 170px;
+				}
+
+				@include breakpoint(tablet-md) {
+					width: calc(50% - 17px);
+				}
+
+				@include breakpoint(mobile-large) {
+					width: 100%;
+				}
+			}
+		}
+
+		.technologies__item {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+
+			@include breakpoint(tablet-md) {
+				display: block;
+				position: relative;
+			}
+
+			@include breakpoint(tablet-md) {
+				min-height: 259px;
+			}
+
+			> .wrap {
+				height: 100%;
+				margin: 0;
+				padding: 50px 36px;
+				border-radius: 5px;
+
+				@include breakpoint(tablet-md) {
+					position: absolute;
+				}
+
+				> .item--title {
+					color: white;
+					text-align: left;
+					position: relative;
+					z-index: 100;
+
+					@include breakpoint(tablet-md) {
+						padding-right: 0;
+					}
+
+					&:after {
+						position: static;
+						content: '';
+						display: inline-block;
+						margin-left: 15px;
+						min-width: 10px;
+						width: 10px;
+						height: 18px;
+						background: url(/local/templates/maxonor/assets/images/white-chevron-right.svg)
+							no-repeat center center;
+						transition: all 0.2s ease-in-out;
+					}
+				}
+			}
+
+			&[data-id='1'] {
+				grid-column-start: 1;
+				grid-column-end: 3;
+				grid-row-start: 2;
+				grid-row-end: 4;
+			}
+
+			&[data-id='2'] {
+				grid-column-start: 3;
+				grid-column-end: 5;
+				grid-row-start: 5;
+				grid-row-end: 7;
+			}
+
+			&[data-id='3'] {
+				grid-column-start: 1;
+				grid-column-end: 3;
+				grid-row-start: 8;
+				grid-row-end: 10;
+			}
+		}
+	}
+}
+
+footer {
+	clear: both;
+}

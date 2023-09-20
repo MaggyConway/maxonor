@@ -1,0 +1,1 @@
+<h2>Ценности компании <img src="/local/templates/maxonor/assets/images/light_header/logo.svg" class="logo" alt="logo" /></h2>

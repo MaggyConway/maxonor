@@ -1,0 +1,1 @@
+<h1 class="page_hero__title">Сенсорные смесители</h1>

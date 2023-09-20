@@ -1,0 +1,48 @@
+.aerators {
+	@include pin_card;
+
+	h2 {
+		margin-bottom: 38px !important;
+
+		@include breakpoint(mobile-middle) {
+			margin-bottom: 14px !important;
+		}
+	}
+
+	h2 + p {
+		max-width: 510px;
+		line-height: 23px;
+		color: #67636d;
+		margin-bottom: 52px;
+
+		@include breakpoint(mobile-middle) {
+			margin-bottom: 14px !important;
+			font-size: 12px;
+			line-height: 17px;
+		}
+	}
+
+    &__map {
+		height: 580px;
+
+		@include breakpoint(tablet-md) {
+			height: 350px;
+		}
+
+		@include breakpoint(tablet) {
+			min-height: 275px;
+        	height: 275px;
+		}
+
+        img {
+            height: 100%;
+            display: block;
+        }
+    }
+
+	&__map__item {
+		@include breakpoint(tablet-md) {
+			display: none;
+		}
+	}
+}

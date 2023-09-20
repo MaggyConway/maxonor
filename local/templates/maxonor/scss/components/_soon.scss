@@ -1,0 +1,165 @@
+@mixin soon_sticker {
+	padding: 4px 5px;
+	min-height: 20px;
+	border-radius: 4px;
+	overflow: hidden;
+	background: $c-orange;
+	color: white;
+	@include small_text;
+	line-height: 17px;
+	text-transform: uppercase;
+	text-align: center;
+	box-sizing: border-box;
+	margin-bottom: 4px;
+	width: fit-content;
+}
+
+// .tabs > li.soon,
+// .footer--col.tech_menu ul li:nth-of-type(1),
+// .footer--col.tech_menu ul li:nth-of-type(3) {
+// 	position: relative;
+// 	&:after {
+// 		content: 'СКОРО';
+// 		@include soon_sticker;
+// 		margin-left: 5px;
+// 		font-size: 10px;
+// 		line-height: 12px;
+// 	}
+// }
+
+// .production__gallery__map.soon {
+// 	position: relative;
+// 	&:after {
+// 		position: absolute;
+// 		content: 'СКОРО';
+// 		@include soon_sticker;
+// 		font-size: 10px;
+// 		line-height: 12px;
+// 		top: 18px;
+// 		// left: 17px;
+// 		right: 17px;
+// 	}
+// }
+
+// .technologies__item.soon,
+// .collections__items .technologies__item:nth-child(1),
+// .collections__items .technologies__item:nth-child(2) {
+// 	position: relative;
+// 	&:before {
+// 		position: absolute;
+// 		content: 'СКОРО';
+// 		@include soon_sticker;
+// 		top: 21px;
+// 		left: 21px;
+// 		z-index: 100;
+// 	}
+// }
+
+// .collections__items .technologies__item:nth-child(1),
+// .collections__items .technologies__item:nth-child(2) {
+// 	&:before {
+// 		left: 37px;
+// 		height: 25px;
+// 	}
+// }
+
+// .collections__items .technologies__item:nth-child(2) {
+// 	&:before {
+// 		content: 'СКОРО';
+// 	}
+// }
+
+// .main_menu-section.soon {
+// 	position: relative;
+// 	&:before {
+// 		position: absolute;
+// 		content: 'СКОРО';
+// 		@include soon_sticker;
+// 		left: 9px;
+// 		z-index: 100;
+// 		top: 25px;
+// 	}
+// }
+
+.page_hero--inner.soon h1 {
+	position: relative;
+	&:before {
+		position: absolute;
+		content: 'СКОРО';
+		@include soon_sticker;
+		top: -30px;
+		left: 2px;
+	}
+}
+
+.tech_catalog {
+	.catalog_section.soon {
+		display: block;
+		> p {
+			@include section_card_title;
+			font-weight: 600;
+			color: #67636d;
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		> .products_grid {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: -17px;
+			> div {
+				position: relative;
+				width: calc(25% - 34px);
+				height: 334px;
+				margin: 17px;
+				background: #f5f5f6;
+				border-radius: 5px;
+				box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.16),
+					0px 0px 1px rgba(0, 0, 0, 0.4);
+
+				&:before {
+					position: absolute;
+					content: 'СКОРО';
+					@include soon_sticker;
+					font-size: 10px;
+					line-height: 12px;
+					top: 19px;
+					left: 17px;
+					background-color: #c7c7c7;
+				}
+			}
+		}
+	}
+}
+
+// .main_menu__sidebar .submenu > li {
+// 	> a.main_menu-soon {
+// 		position: relative;
+
+// 		&:before {
+// 			@include soon_sticker;
+// 			position: relative;
+// 			content: 'СКОРО';
+// 			top: 10px;
+// 			width: 43px;
+// 			font-size: 10px;
+// 			display: block;
+
+// 			@include breakpoint(IPad-Pro) {
+// 				top: -5px;
+// 			}
+// 		}
+// 	}
+// }
+
+// .catalog-sections .catalog-sections__list > li > a span.sections__list-soon {
+// 	&:after {
+// 		@include soon_sticker;
+// 		content: 'СКОРО';
+// 		font-size: 10px;
+// 		line-height: 12px;
+// 		width: 35px;
+// 		transform: translateY(4px);
+// 	}
+// }
